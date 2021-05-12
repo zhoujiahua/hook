@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/home', (req, res) => {
-    res.send('hi home')
+    res.send('hi home work')
 })
 
 app.post('/hook', (req, res) => {

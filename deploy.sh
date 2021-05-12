@@ -19,4 +19,6 @@ else
     yarn
 fi
 
+pm2 restart hook
+
 echo "---------End deploy----------------------------"
