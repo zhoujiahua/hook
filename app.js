@@ -1,4 +1,4 @@
-const cprocess = require('child_process');
+const exec = require('child_process');
 const express = require('express');
 const morgan = require("morgan");
 const cors = require('cors');
@@ -21,11 +21,8 @@ app.get('/home', (req, res) => {
 
 app.post('/hook', (req, res) => {
     const r = req.body;
-    console.log(r > './log/hook.txt')
-    cprocess.execFile('deploy.sh', [], null, (err, stdout, stderr) => {
-        console.log(err, stdout, stderr)
-        return res.json({ success: true });
-    });
+    console.log(r);
+    exec.execSync('bash deploy.sh');
 })
 
 const port = process.env.PORT || 6500;
