@@ -15,7 +15,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/hook', (req, res) => {
-    console.log('hi')
+    const r = req.body;
+    console.log(r)
+    res.json(r);
 })
 
 const port = process.env.PORT || 6500;
