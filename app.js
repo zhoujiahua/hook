@@ -21,14 +21,7 @@ app.get('/home', (req, res) => {
 
 app.post('/hook', (req, res) => {
     const r = req.body;
-    console.log(r)
-    // let ip = '1.1.1.1';
-    // let username = 'test';
-    // let password = 'pwd';
-    // let newpassword = 'newpwd';
-    // cprocess.execFile('change_password.sh', ['-H', ip, '-U', username, '-P', password, '-N', newpassword], null, function (err, stdout, stderr) {
-    //     callback(err, stdout, stderr);
-    // });
+    console.log(r > './log/hook.txt')
     cprocess.execFile('deploy.sh', [], null, (err, stdout, stderr) => {
         console.log(err, stdout, stderr)
         return res.json({ success: true });
