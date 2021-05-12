@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
     res.send('hi hook')
 })
 
+app.get('/home', (req, res) => {
+    res.send('hi home')
+})
+
 app.post('/hook', (req, res) => {
     const r = req.body;
     console.log(r)
