@@ -24,7 +24,7 @@ app.post('/hook', (req, res) => {
 app.post('/hook/chuzu', (req, res) => {
     const r = req.body;
     console.log(r);
-    exec.execSync('bash /www/wwwroot/rec/deploy.sh');
+    exec.execSync('bash chuzu.sh');
 })
 
 const port = process.env.PORT || 6500;
