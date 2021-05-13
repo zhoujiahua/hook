@@ -16,13 +16,19 @@ app.get('/', (req, res) => {
 })
 
 app.get('/home', (req, res) => {
-    res.send('hi home work')
+    res.send('hi home work cc')
 })
 
 app.post('/hook', (req, res) => {
     const r = req.body;
     console.log(r);
     exec.execSync('bash deploy.sh');
+})
+
+app.post('/hook/chuzu', (req, res) => {
+    const r = req.body;
+    console.log(r);
+    exec.execSync('bash /www/wwwroot/rec/deploy.sh');
 })
 
 const port = process.env.PORT || 6500;
