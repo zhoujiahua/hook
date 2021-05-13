@@ -12,11 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-    res.send('hi hook')
-})
-
-app.get('/home', (req, res) => {
-    res.send('hi home work cc')
+    res.send('Hi hook work')
 })
 
 app.post('/hook', (req, res) => {
