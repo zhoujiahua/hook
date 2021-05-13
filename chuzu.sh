@@ -1,6 +1,4 @@
 #!/bin/bash
 
-toPath='/www/wwwroot/rec/'
+cd /www/wwwroot/rec && sh deploy.sh
 
-echo `cd $toPath`
-echo `sh deploy.sh`
