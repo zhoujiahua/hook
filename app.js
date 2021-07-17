@@ -27,5 +27,11 @@ app.post('/hook/chuzu', (req, res) => {
     exec.execSync('bash chuzu.sh');
 })
 
+app.post('/hook/tecs', (req, res) => {
+    const r = req.body;
+    console.log(r);
+    exec.execSync('bash tecs.sh');
+})
+
 const port = process.env.PORT || 6500;
 app.listen(port, error => console.log('http://localhost:' + port));
