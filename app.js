@@ -12,25 +12,28 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-    res.send('Hi hook work')
+    return res.send('Hi hook work')
 })
 
 app.post('/hook', (req, res) => {
     const r = req.body;
     console.log(r);
     exec.execSync('bash deploy.sh');
+    return res.status(200).json({ success: true })
 })
 
 app.post('/hook/chuzu', (req, res) => {
     const r = req.body;
     console.log(r);
     exec.execSync('bash chuzu.sh');
+    return res.status(200).json({ success: true })
 })
 
 app.post('/hook/tecs', (req, res) => {
     const r = req.body;
     console.log(r);
     exec.execSync('bash tecs.sh');
+    return res.status(200).json({ success: true })
 })
 
 const port = process.env.PORT || 6500;
